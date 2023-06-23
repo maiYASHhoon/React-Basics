@@ -1,19 +1,26 @@
 body {
     margin: 0;
+    font-family: Roboto;
 }
 
 header {
     background: #03a9fa;
-    text-align: center
+    text-align: center;
 }
 
 .logo {
-    color: white;
+    color: #fff;
     font-family: Anton;
     font-size: 40px;
 }
 
 header input {
     font-size: 20px;
-    margin: 20px opx;
+    margin: 20px 0px
+}
+
+.news_item {
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid grey;
 }
