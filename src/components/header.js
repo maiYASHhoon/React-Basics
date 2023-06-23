@@ -1,42 +1,27 @@
-/*const getTheYear = () => {
-    const newDate = new Date();
-    return newDate.getFullYear();
-};*/
-
-/*const Header = () => {
-    const getTheYear = () => {
-        const newDate = new Date();
-        return newDate.getFullYear();
-    };
-    return (
-        <>
-            <div>The Date is {getTheYear()}</div>
-        </>
-    );
-};*/
-
 import React, {Component} from "react";
 
-/*let styles = {
-    header: {
-        background: "#03a9fa",
-    },
-    logo: {
-        color: "#fff",
-        fontFamily: "Anton",
-        textAlign: "center",
-    },
+/*const inputChange = () => {
+    console.log("I Was Changed");
 };*/
 
-// Class Base Components 🌐
 class Header extends Component {
+    inputChange = (event) => {
+        console.log(event.target.value);
+    };
+
     render() {
         return (
             <>
                 <header>
-                    {/* <div style={styles.logo}>Logo</div> */}
-                    <div className="logo">Logo</div>
-                    <input />
+                    <div
+                        className="logo"
+                        onClick={() => {
+                            console.log("I was Clicked");
+                        }}
+                    >
+                        Logo
+                    </div>
+                    <input onChange={this.inputChange} />
                 </header>
             </>
         );
