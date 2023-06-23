@@ -5,10 +5,21 @@ import React, {Component} from "react";
 };*/
 
 class Header extends Component {
-    inputChange = (event) => {
-        console.log(event.target.value);
+    state = {
+        title: "The keyword are: ",
+        keywords: "",
+        count: 0,
     };
 
+    inputChange = (event) => {
+        this.setState({
+            keywords: event.target.value,
+        });
+    };
+
+    addOne = () => {
+        this.setState({count: this.state.count + 1});
+    };
     render() {
         return (
             <>
@@ -21,7 +32,12 @@ class Header extends Component {
                     >
                         Logo
                     </div>
-                    <input onChange={this.inputChange} />
+                    <input onChange={(e) => this.inputChange(e)} />
+                    <br />
+                    <div>{this.state.title}</div>
+                    <div>{this.state.keywords}</div>
+                    <div>{this.state.count}</div>
+                    <button onClick={() => this.addOne()}>Add One</button>
                 </header>
             </>
         );
