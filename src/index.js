@@ -10,6 +10,7 @@ import Life from "./components/lifecycle";
 
 class App extends Component {
     state = {
+        unmount: true,
         active: false,
         news: JSON,
         filtered: [],
@@ -43,7 +44,9 @@ class App extends Component {
                     <br />
                     <h1>This is a childern</h1>
                 </NewsList>
-                <Life />
+                {this.state.unmount ? <Life /> : null}
+                <button onClick={() => this.setState({unmount: !this.state.unmount})}>Action</button>
+
                 <Footer footerText={footerText} />
             </div>
         );
